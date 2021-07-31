@@ -13,8 +13,11 @@ var fs = require('fs'),
 	os = require('os'),
 	chokidar = require('chokidar');
 require('colors');
+var getIPAddress = require('./getIPAddress')
+var IP_ADDRESS = getIPAddress()
 
 var INJECTED_CODE = fs.readFileSync(path.join(__dirname, "injected.html"), "utf8");
+
 
 var LiveServer = {
 	server: null,
@@ -259,8 +262,8 @@ LiveServer.start = function(options) {
 		LiveServer.server = server;
 
 		var address = server.address();
-		var serveHost = address.address === "0.0.0.0" ? "127.0.0.1" : address.address;
-		var openHost = host === "0.0.0.0" ? "127.0.0.1" : host;
+		var serveHost = address.address === "0.0.0.0" ? IP_ADDRESS : address.address;
+		var openHost = host === "0.0.0.0" ? IP_ADDRESS : host;
 
 		var serveURL = protocol + '://' + serveHost + ':' + address.port;
 		var openURL = protocol + '://' + openHost + ':' + address.port;
