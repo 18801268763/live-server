@@ -118,7 +118,7 @@ function entryPoint(staticHandler, file) {
 /**
  * Start a live server with parameters given as an object
  * @param host {string} Address to bind to (default: 0.0.0.0)
- * @param port {number} Port number (default: 8080)
+ * @param port {number} Port number (default: 65535)
  * @param root {string} Path to root directory (default: cwd)
  * @param watch {array} Paths to exclusively watch for changes
  * @param ignore {array} Paths to ignore when watching files for changes
@@ -135,7 +135,7 @@ function entryPoint(staticHandler, file) {
 LiveServer.start = function(options) {
 	options = options || {};
 	var host = options.host || '0.0.0.0';
-	var port = options.port !== undefined ? options.port : 8080; // 0 means random
+	var port = options.port !== undefined ? options.port : 65535; // 0 means random
 	var root = options.root || process.cwd();
 	var mount = options.mount || [];
 	var watchPaths = options.watch || [root];
