@@ -1,8 +1,8 @@
-var assert = require('assert');
-var path = require('path');
-var exec = require('child_process').execFile;
-var cmd = path.join(__dirname, "..", "live-server.js");
-var opts = {
+let assert = require('assert');
+let path = require('path');
+let exec = require('child_process').execFile;
+let cmd = path.join(__dirname, "..", "live-server.js");
+let opts = {
 	timeout: 2000,
 	maxBuffer: 1024
 };

@@ -1,4 +1,4 @@
-var fs = require("fs");
+let fs = require("fs");
 
 module.exports = {
 	cert: fs.readFileSync(__dirname + "/server.cert"),

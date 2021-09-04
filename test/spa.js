@@ -1,12 +1,12 @@
-var request = require('supertest');
-var path = require('path');
-var liveServerSpa = require('..').start({
+let request = require('supertest');
+let path = require('path');
+let liveServerSpa = require('..').start({
 	root: path.join(__dirname, "data"),
 	port: 0,
 	open: false,
 	middleware: [ "spa" ]
 });
-var liveServerSpaIgnoreAssets = require('..').start({
+let liveServerSpaIgnoreAssets = require('..').start({
 	root: path.join(__dirname, "data"),
 	port: 0,
 	open: false,

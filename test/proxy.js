@@ -1,12 +1,12 @@
-var request = require('supertest');
-var path = require('path');
-var port = 40200;
-var server1 = require('..').start({
+let request = require('supertest');
+let path = require('path');
+let port = 40200;
+let server1 = require('..').start({
 	root: path.join(__dirname, "data"),
 	port: port,
 	open: false
 });
-var server2 = require('..').start({
+let server2 = require('..').start({
 	root: path.join(__dirname, "data"),
 	port: 0,
 	open: false,

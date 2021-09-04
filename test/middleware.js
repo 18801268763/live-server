@@ -1,6 +1,6 @@
-var request = require('supertest');
-var path = require('path');
-var liveServer1 = require('..').start({
+let request = require('supertest');
+let path = require('path');
+let liveServer1 = require('..').start({
 	root: path.join(__dirname, 'data'),
 	port: 0,
 	open: false,
@@ -11,13 +11,13 @@ var liveServer1 = require('..').start({
 		}
 	]
 });
-var liveServer2 = require('..').start({
+let liveServer2 = require('..').start({
 	root: path.join(__dirname, 'data'),
 	port: 0,
 	open: false,
 	middleware: [ "example" ]
 });
-var liveServer3 = require('..').start({
+let liveServer3 = require('..').start({
 	root: path.join(__dirname, 'data'),
 	port: 0,
 	open: false,
