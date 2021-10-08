@@ -22,9 +22,17 @@ Installation
 
 You need node.js and npm. You should probably install this globally.
 
-**Npm way**
+**npm way**
 
-	npm install -g live-server
+```sh
+npm i -g @oliver_lou/live-server
+```
+
+**yarn way**
+
+```sh
+yarn global add @oliver_lou/live-server 
+```
 
 **Manual way**
 
