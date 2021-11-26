@@ -12,12 +12,18 @@ function getIPAddress() {
 
 	// 兼容VMware15Pro中的CentOS7网卡
 	let centOSNetwork = networkInterfaces['ens33']
+
+	// 兼容Apple Mac mini M1的默认网卡
+	let appleMacMiniNetwork = networkInterfaces['en1']
+
 	if(defaultWLAN){
 		wlan = defaultWLAN
 	}else if(externalNetwork){
 		wlan = externalNetwork
 	} else if (centOSNetwork) {
 		wlan = centOSNetwork
+	} else if (appleMacMiniNetwork) {
+		wlan = appleMacMiniNetwork
 	}
 	for (let i = 0; i < wlan.length; i++) {
 		let alias = wlan[i];
